@@ -32,6 +32,9 @@ class Actor(models.Model):
             return f'Актер {self.first_name} {self.last_name}'
         else:
             return f'Актрисса {self.first_name} {self.last_name}'
+
+    def get_url(self):
+        return reverse('one_act', args=[self.id])
 class Movie(models.Model):
     EURO = "EUR"
     USD = "USD"
